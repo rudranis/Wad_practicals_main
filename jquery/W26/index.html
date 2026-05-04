@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PICT B.E. Course Structure</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    <style>
+      .custom-header {
+        background: #003366 !important;
+      }
+      .custom-header h1 {
+        color: #ffffff !important;
+        font-size: 18px;
+      }
+      .subject-item {
+        border-left: 4px solid #003366;
+        padding-left: 10px;
+        margin-bottom: 8px;
+        background: #f0f4ff;
+        border-radius: 4px;
+      }
+      .subject-item strong {
+        color: #003366;
+        display: block;
+      }
+      .subject-item span {
+        color: #555;
+        font-size: 13px;
+      }
+      .sem-title {
+        background: #e8eef8;
+        padding: 6px 10px;
+        font-weight: bold;
+        color: #003366;
+        border-radius: 4px;
+        margin: 8px 0 5px 0;
+      }
+      [data-role="collapsible"] .ui-collapsible-heading a {
+        background: #003366 !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-role="page" id="home">
+      <div data-role="header" class="custom-header" data-position="fixed">
+        <h1>📚 PICT B.E. Courses</h1>
+      </div>
+
+      <div data-role="content">
+        <p style="color: #555; font-size: 13px; margin-bottom: 12px">
+          Pune Institute of Computer Technology — B.E. Computer Engineering
+          four-year curriculum.
+        </p>
+
+        <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+          <!-- FE -->
+          <div data-role="collapsible">
+            <h3>🟦 FE — First Year Engineering</h3>
+            <div class="sem-title">Semester I</div>
+            <div class="subject-item">
+              <strong>Engineering Mathematics I</strong
+              ><span>Differential calculus, matrices, complex numbers.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Engineering Physics</strong
+              ><span>Optics, quantum mechanics, semiconductor basics.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Engineering Chemistry</strong
+              ><span>Organic chemistry, polymers, electrochemistry.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Basic Electrical Engineering</strong
+              ><span>DC/AC circuits, transformers, machine fundamentals.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Engineering Mechanics</strong
+              ><span>Statics, dynamics, friction, moment of inertia.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Basic Electronics</strong
+              ><span>Diodes, transistors, basic amplifier circuits.</span>
+            </div>
+            <div class="sem-title">Semester II</div>
+            <div class="subject-item">
+              <strong>Engineering Mathematics II</strong
+              ><span>Integration, vector calculus, Fourier series.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Programming in C</strong
+              ><span>Basic C syntax, loops, arrays, functions, pointers.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Engineering Drawing</strong
+              ><span>Orthographic projections, isometric views, AutoCAD.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Communication Skills</strong
+              ><span
+                >Technical writing, presentation, professional English.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Workshop Practice</strong
+              ><span>Sheet metal, carpentry, fitting lab work.</span>
+            </div>
+          </div>
+
+          <!-- SE -->
+          <div data-role="collapsible">
+            <h3>🟩 SE — Second Year Engineering</h3>
+            <div class="sem-title">Semester III</div>
+            <div class="subject-item">
+              <strong>Data Structures</strong
+              ><span>Arrays, linked lists, stacks, queues, trees, graphs.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Discrete Mathematics</strong
+              ><span>Logic, sets, relations, graph theory, combinatorics.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Digital Electronics</strong
+              ><span>Boolean algebra, combinational and sequential logic.</span>
+            </div>
+            <div class="subject-item">
+              <strong>OOP with Java</strong
+              ><span
+                >Classes, inheritance, polymorphism, exception handling.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Computer Organization</strong
+              ><span>CPU design, memory hierarchy, instruction sets.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Engineering Mathematics III</strong
+              ><span>Laplace transforms, probability, statistics.</span>
+            </div>
+            <div class="sem-title">Semester IV</div>
+            <div class="subject-item">
+              <strong>Analysis of Algorithms</strong
+              ><span>Complexity, sorting, searching, graph algorithms.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Database Management Systems</strong
+              ><span>SQL, ER modelling, normalization, transactions.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Operating Systems</strong
+              ><span>Process scheduling, memory management, file systems.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Microprocessors</strong
+              ><span>8086 architecture, assembly language, interfacing.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Software Engineering</strong
+              ><span>SDLC models, requirements, testing methodologies.</span>
+            </div>
+          </div>
+
+          <!-- TE -->
+          <div data-role="collapsible">
+            <h3>🟧 TE — Third Year Engineering</h3>
+            <div class="sem-title">Semester V</div>
+            <div class="subject-item">
+              <strong>Computer Networks</strong
+              ><span>OSI/TCP-IP models, routing, switching, protocols.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Theory of Computation</strong
+              ><span
+                >Automata, regular expressions, context-free grammars.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>System Programming</strong
+              ><span>Assemblers, linkers, loaders, macro processors.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Compiler Design</strong
+              ><span
+                >Lexical analysis, parsing, semantic analysis, code gen.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Elective I</strong
+              ><span>Options: IoT, Cloud Computing, Information Security.</span>
+            </div>
+            <div class="sem-title">Semester VI</div>
+            <div class="subject-item">
+              <strong>Artificial Intelligence</strong
+              ><span
+                >Search algorithms, knowledge representation, ML basics.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Web Technologies</strong
+              ><span>HTML5, CSS3, JavaScript, Node.js, REST APIs.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Data Warehousing &amp; Mining</strong
+              ><span
+                >ETL, OLAP, clustering, classification, association rules.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Information Security</strong
+              ><span
+                >Cryptography, network security, ethical hacking basics.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Mini Project</strong
+              ><span>Team-based development of a small software project.</span>
+            </div>
+          </div>
+
+          <!-- BE -->
+          <div data-role="collapsible">
+            <h3>🟥 BE — Final Year Engineering</h3>
+            <div class="sem-title">Semester VII</div>
+            <div class="subject-item">
+              <strong>Machine Learning</strong
+              ><span
+                >Regression, classification, clustering, neural networks.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>High Performance Computing</strong
+              ><span>Parallel processing, GPU computing, MPI/OpenMP.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Distributed Systems</strong
+              ><span
+                >Consensus algorithms, consistency, distributed databases.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Elective II</strong
+              ><span>Options: Deep Learning, Blockchain, NLP.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Project Phase I</strong
+              ><span
+                >Problem definition, literature survey, prototype design.</span
+              >
+            </div>
+            <div class="sem-title">Semester VIII</div>
+            <div class="subject-item">
+              <strong>Big Data Analytics</strong
+              ><span
+                >Hadoop, Spark, MapReduce, real-time stream processing.</span
+              >
+            </div>
+            <div class="subject-item">
+              <strong>Cloud Computing</strong
+              ><span>AWS, Azure, Docker, Kubernetes basics.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Elective III</strong
+              ><span>Options: Computer Vision, AR/VR, Quantum Computing.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Project Phase II</strong
+              ><span>Full implementation, testing, final demonstration.</span>
+            </div>
+            <div class="subject-item">
+              <strong>Industrial Training</strong
+              ><span>6-week industry placement for practical exposure.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h4>© PICT Pune — Computer Engineering</h4>
+      </div>
+    </div>
+  </body>
+</html>

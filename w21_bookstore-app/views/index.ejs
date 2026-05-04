@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Online Bookstore</h1>
+
+    <a href="/add" class="btn">Add Book</a>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Genre</th>
+            <th>Actions</th>
+        </tr>
+
+        <% books.forEach(b=> { %>
+            <tr>
+                <td>
+                    <%= b.title %>
+                </td>
+                <td>
+                    <%= b.author %>
+                </td>
+                <td>₹<%= b.price %>
+                </td>
+                <td>
+                    <%= b.genre %>
+                </td>
+                <td>
+                    <a href="/edit/<%= b._id %>">Edit</a>
+                    <a href="/delete/<%= b._id %>" onclick="return confirm('Delete?')">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+
+    </table>
+
+</body>
+
+</html>

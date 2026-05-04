@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #fff8f0;
+            margin: 0;
+        }
+
+        header {
+            background: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #ff6600;
+            color: white;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 6px 10px;
+            background: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            background: black;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Our Menu</h1>
+    </header>
+
+    <a href="index.html" class="home-btn">← Back to Home</a>
+
+    <div class="cart">
+        Cart: <span id="cartCount">0</span>
+    </div>
+
+    <div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Dish Name</th>
+                    <th>Description</th>
+                    <th>Price (₹)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><img src="https://source.unsplash.com/80x80/?paneer"></td>
+                    <td>Paneer Tikka</td>
+                    <td>Grilled paneer with spices</td>
+                    <td>₹299</td>
+                    <td><button onclick="addToCart()">Add</button></td>
+                </tr>
+
+                <tr>
+                    <td><img src="https://source.unsplash.com/80x80/?biryani"></td>
+                    <td>Biryani</td>
+                    <td>Flavorful rice dish</td>
+                    <td>₹399</td>
+                    <td><button onclick="addToCart()">Add</button></td>
+                </tr>
+
+                <tr>
+                    <td><img src="https://source.unsplash.com/80x80/?pizza"></td>
+                    <td>Pizza</td>
+                    <td>Cheesy Italian pizza</td>
+                    <td>₹349</td>
+                    <td><button onclick="addToCart()">Add</button></td>
+                </tr>
+
+                <tr>
+                    <td><img src="https://source.unsplash.com/80x80/?noodles"></td>
+                    <td>Hakka Noodles</td>
+                    <td>Stir-fried noodles</td>
+                    <td>₹249</td>
+                    <td><button onclick="addToCart()">Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        let count = 0;
+
+        function addToCart() {
+            count++;
+            document.getElementById("cartCount").innerText = count;
+        }
+    </script>
+
+</body>
+
+</html>

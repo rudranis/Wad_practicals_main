@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Users Data</title>
+    <style>
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Registered Users</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>DOB</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+
+        <tbody id="data"></tbody>
+    </table>
+
+    <script>
+
+        let users = JSON.parse(localStorage.getItem("users")) || "";
+        let html = "";
+
+        users.forEach(u => {
+            html += `
+<tr>
+<td>${u.name}</td>
+<td>${u.email}</td>
+<td>${u.mobile}</td>
+<td>${u.dob}</td>
+<td>${u.city}</td>
+<td>${u.address}</td>
+<td>${u.username}</td>
+</tr>
+`;
+        });
+
+        document.getElementById("data").innerHTML = html;
+
+    </script>
+
+</body>
+
+</html>

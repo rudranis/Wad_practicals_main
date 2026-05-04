@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="/menu.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>ABC Delights</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+        </div>
+    </nav>
+
+    <h2>Our Menu</h2>
+
+    <div class="grid">
+        <% menu.forEach(item=> { %>
+            <div class="card">
+                <img src="<%= item.img %>">
+                <div class="content">
+                    <h3>
+                        <%= item.name %>
+                    </h3>
+                    <p>₹<%= item.price %>
+                    </p>
+                    <a href="/menu/<%= item.id %>">View Details</a>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <footer>
+        <p>© 2026 ABC Delights</p>
+    </footer>
+
+</body>
+
+</html>

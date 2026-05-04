@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .weather-box {
+            max-width: 400px;
+            margin: 100px auto;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Replacement for form-control */
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Replacement for btn + btn-light + w-100 */
+        .btn-custom {
+            width: 100%;
+            padding: 10px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-custom:hover {
+            background: #e6e6e6;
+        }
+
+        
+        .result-box {
+            margin-top: 20px;
+        }
+
+       
+        .warning {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="weather-box">
+
+        <h2>Weather App</h2>
+
+        <input type="text" id="city" class="input-box" placeholder="Enter City">
+
+        <button class="btn-custom" onclick="getWeather()">Get Weather</button>
+
+        <div id="result" class="result-box"></div>
+
+    </div>
+
+    <script>
+       
+        
+
+       function getWeather() {
+            const city = document.getElementById("city").value.toLowerCase();
+            const result = document.getElementById("result");
+
+            result.innerHTML = "Loading...";
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "weather.json", true); // async request
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+                    const data = JSON.parse(xhr.responseText);
+
+                    if (data[city]) {
+                        const w = data[city];
+
+                        result.innerHTML = `
+                    <h4>${city.toUpperCase()}</h4>
+                    <p>🌡 Temperature: ${w.temp}</p>
+                    <p>💧 Humidity: ${w.humidity}</p>
+                    <p>☁ Condition: ${w.condition}</p>
+                `;
+                    } else {
+                        result.innerHTML = `<p style="color:yellow">City not found</p>`;
+                    }
+                }
+            };
+
+            xhr.send(); // send request
+        }
+    </script>
+
+</body>
+
+</html>

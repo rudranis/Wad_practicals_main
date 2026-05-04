@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Employee</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h2>Edit Employee</h2>
+
+    <form action="/update/<%= emp._id %>" method="POST">
+
+        <input type="text" name="name" value="<%= emp.name %>" required>
+        <input type="text" name="department" value="<%= emp.department %>" required>
+        <input type="text" name="designation" value="<%= emp.designation %>" required>
+        <input type="number" name="salary" value="<%= emp.salary %>" required>
+        <input type="date" name="joiningDate" value="<%= emp.joiningDate.toISOString().split('T')[0] %>" required>
+
+        <button type="submit">Update</button>
+
+    </form>
+
+</body>
+
+</html>

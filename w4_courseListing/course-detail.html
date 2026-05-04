@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Details</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f7fb;
+}
+
+header {
+    background: #4f46e5;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #4f46e5;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: #06b6d4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Recommended */
+.row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    font-weight: bold;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.card span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Images */
+.ml { background: url('https://source.unsplash.com/400x300/?machine-learning') center/cover; }
+.python { background: url('https://source.unsplash.com/400x300/?python') center/cover; }
+.react { background: url('https://source.unsplash.com/400x300/?reactjs') center/cover; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #111827;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="courseTitle"></h1>
+</header>
+
+<section>
+    <h2>Description</h2>
+    <p id="courseDesc"></p>
+</section>
+
+<section>
+    <h2>Instructor</h2>
+    <p id="courseInstructor"></p>
+    <p id="courseBio"></p>
+</section>
+
+<section>
+    <h2>What this course covers</h2>
+    <ul id="courseTopics"></ul>
+</section>
+
+<section>
+    <h2>Modules</h2>
+    <ul id="courseModules"></ul>
+</section>
+
+<section>
+    <button class="btn">Add to Cart</button>
+</section>
+
+<section>
+    <h2>Recommended Courses</h2>
+    <div class="row">
+        <div class="card ml"><span>Deep Learning</span></div>
+        <div class="card python"><span>Python for Data Science</span></div>
+        <div class="card react"><span>React Development</span></div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Online Learning Hub | All Rights Reserved</p>
+</footer>
+<script>
+    const courses = {
+        ml: {
+            title: "Machine Learning Basics",
+            desc: "Learn fundamentals of ML including supervised & unsupervised learning.",
+            instructor: "Dr. Sharma",
+            bio: "PhD in AI with 10+ years experience.",
+            topics: ["Regression", "Classification", "Model Evaluation"],
+            modules: ["Basics", "Algorithms", "Projects"]
+        },
+        ds: {
+            title: "Data Science with Python",
+            desc: "Analyze data using Python, Pandas, and visualization tools.",
+            instructor: "Ms. Gupta",
+            bio: "Data Scientist at top MNC.",
+            topics: ["Pandas", "Visualization", "Statistics"],
+            modules: ["Python Basics", "Data Analysis", "Projects"]
+        },
+        web: {
+            title: "Full Stack Web Development",
+            desc: "Build full stack apps using MERN stack.",
+            instructor: "Mr. Verma",
+            bio: "Senior Full Stack Developer.",
+            topics: ["HTML/CSS", "React", "Node.js"],
+            modules: ["Frontend", "Backend", "Deployment"]
+        }
+    };
+
+    // Get course from URL
+    const params = new URLSearchParams(window.location.search);
+    const courseKey = params.get("course");
+
+    // Default fallback
+    const course = courses[courseKey] || courses["ml"];
+
+    // Fill data
+    document.getElementById("courseTitle").innerText = course.title;
+    document.getElementById("courseDesc").innerText = course.desc;
+    document.getElementById("courseInstructor").innerText = course.instructor;
+    document.getElementById("courseBio").innerText = course.bio;
+
+    // Topics
+    const topicsList = document.getElementById("courseTopics");
+    course.topics.forEach(t => {
+        let li = document.createElement("li");
+        li.innerText = t;
+        topicsList.appendChild(li);
+    });
+
+    // Modules
+    const moduleList = document.getElementById("courseModules");
+    course.modules.forEach(m => {
+        let li = document.createElement("li");
+        li.innerText = m;
+        moduleList.appendChild(li);
+    });
+</script>
+</body>
+</html>

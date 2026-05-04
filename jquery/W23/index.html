@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PICT Student Clubs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    <style>
+      .clubs-header {
+        background: #2e7d32 !important;
+      }
+      .clubs-header h1 {
+        color: #ffffff !important;
+      }
+      .clubs-footer {
+        background: #2e7d32 !important;
+      }
+      .clubs-footer h4 {
+        color: #e8f5e9 !important;
+      }
+      .intro-banner {
+        background: linear-gradient(135deg, #2e7d32, #66bb6a);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 15px;
+        color: white;
+        text-align: center;
+      }
+      .intro-banner h2 {
+        margin: 0 0 6px 0;
+        font-size: 17px;
+      }
+      .intro-banner p {
+        margin: 0;
+        font-size: 13px;
+        opacity: 0.9;
+      }
+      .club-card {
+        background: #fff;
+        border-radius: 10px;
+        margin-bottom: 14px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .club-card-header {
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-bottom: 1px solid #eee;
+      }
+      .club-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        flex-shrink: 0;
+      }
+      .club-card-header h3 {
+        margin: 0 0 3px 0;
+        font-size: 16px;
+        color: #1b5e20;
+      }
+      .club-card-header p {
+        margin: 0;
+        font-size: 12px;
+        color: #777;
+      }
+      .club-body {
+        padding: 12px 14px;
+      }
+      .club-desc {
+        color: #444;
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+      .achievement-title {
+        font-size: 12px;
+        font-weight: bold;
+        color: #2e7d32;
+        margin-bottom: 6px;
+      }
+      .achievement-item {
+        font-size: 13px;
+        color: #555;
+        margin-bottom: 5px;
+        padding-left: 5px;
+      }
+      .members-badge {
+        display: inline-block;
+        background: #e8f5e9;
+        color: #2e7d32;
+        font-size: 11px;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-weight: bold;
+        margin-top: 6px;
+      }
+      [data-role="collapsible"] .ui-collapsible-heading a {
+        background: #2e7d32 !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-role="page" id="clubs">
+      <div data-role="header" class="clubs-header" data-position="fixed">
+        <h1>🎓 PICT Student Clubs</h1>
+      </div>
+      <div data-role="content" style="padding-top: 10px">
+        <div class="intro-banner">
+          <h2>🌟 Life Beyond Classrooms</h2>
+          <p>PICT hosts 12+ active student clubs. Explore, join, and grow!</p>
+        </div>
+
+        <div data-role="collapsible-set">
+          <!-- TECHNICAL -->
+          <div data-role="collapsible" data-collapsed="false">
+            <h3>💻 Technical Clubs</h3>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #e3f2fd">💻</div>
+                <div>
+                  <h3>Coding Club — PICT ACM</h3>
+                  <p>Competitive Programming</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  The official ACM Student Chapter at PICT. We organize
+                  hackathons, competitive programming contests, technical
+                  workshops, and coding bootcamps.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                  🏆 Winners of Smart India Hackathon 2023
+                </div>
+                <div class="achievement-item">
+                  🏆 Hosted "PICT Code Wars" with 500+ participants
+                </div>
+                <div class="achievement-item">
+                  🏆 3 members qualified for Google Summer of Code 2024
+                </div>
+                <span class="members-badge">👥 120+ Active Members</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #fce4ec">🤖</div>
+                <div>
+                  <h3>Robotics Club — RoboTech</h3>
+                  <p>Automation & Embedded Systems</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  RoboTech focuses on building robots using Arduino, Raspberry
+                  Pi, and ROS. Members participate in national robotics
+                  competitions and organize electronics workshops.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                  🏆 1st Place at TechFest IIT Bombay Robotics 2023
+                </div>
+                <div class="achievement-item">
+                  🏆 Built autonomous line-follower bot for national competition
+                </div>
+                <div class="achievement-item">
+                  🏆 5 workshops on Arduino and IoT for 200+ students
+                </div>
+                <span class="members-badge">👥 80+ Active Members</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #e8f5e9">🧠</div>
+                <div>
+                  <h3>AI &amp; ML Club</h3>
+                  <p>Artificial Intelligence & Data Science</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  Sessions on machine learning, deep learning, NLP, and computer
+                  vision. Members work on real-world datasets and publish
+                  undergraduate research papers.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                  🏆 2 research papers published in IEEE Xplore 2023
+                </div>
+                <div class="achievement-item">
+                  🏆 Winners of NPCI Fintech Hackathon 2023
+                </div>
+                <div class="achievement-item">
+                  🏆 Partnered with NVIDIA for Deep Learning workshops
+                </div>
+                <span class="members-badge">👥 95+ Active Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CULTURAL -->
+          <div data-role="collapsible">
+            <h3>🎨 Cultural Clubs</h3>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #fff3e0">💃</div>
+                <div>
+                  <h3>Dance Club — Rhythm</h3>
+                  <p>Classical, Western & Fusion Dance</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  PICT's premier dance club covering classical Indian forms,
+                  hip-hop, contemporary, and fusion styles. Performs at college
+                  festivals and inter-college events.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                  🏆 Best Dance Group at Pune University Youth Festival 2023
+                </div>
+                <div class="achievement-item">
+                  🏆 Performed at TedxPICT 2024 opening ceremony
+                </div>
+                <div class="achievement-item">
+                  🏆 Won Sinhagad Fest consecutively for 3 years
+                </div>
+                <span class="members-badge">👥 60+ Active Members</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #f3e5f5">🎭</div>
+                <div>
+                  <h3>Drama Club — Curtain Call</h3>
+                  <p>Theatre & Street Plays</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  Explores theatre arts through one-act plays, nukkad natak,
+                  mime, and storytelling. Raises social awareness through
+                  powerful performances.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                  🏆 1st Prize at Firodiya Karandak Competition
+                </div>
+                <div class="achievement-item">
+                  🏆 Performed at Pune Municipal Corporation event
+                </div>
+                <div class="achievement-item">
+                  🏆 Best Script Award at Inter-College Drama Festival 2023
+                </div>
+                <span class="members-badge">👥 45+ Active Members</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SPORTS & SOCIAL -->
+          <div data-role="collapsible">
+            <h3>⚽ Sports & Social Clubs</h3>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #e0f7fa">♟️</div>
+                <div>
+                  <h3>Chess Club</h3>
+                  <p>Strategy & Competitive Chess</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  Fosters strategic thinking through weekly sessions,
+                  inter-college tournaments, and online blitz events. Open to
+                  beginners and advanced players.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                  🏆 PICT student reached State-level Chess Championship 2023
+                </div>
+                <div class="achievement-item">
+                  🏆 Organized SPPU Chess Open tournament 2024
+                </div>
+                <span class="members-badge">👥 35+ Active Members</span>
+              </div>
+            </div>
+
+            <div class="club-card">
+              <div class="club-card-header">
+                <div class="club-icon" style="background: #fff9c4">🌱</div>
+                <div>
+                  <h3>NSS — National Service Scheme</h3>
+                  <p>Social Welfare & Community Service</p>
+                </div>
+              </div>
+              <div class="club-body">
+                <p class="club-desc">
+                  Promotes social responsibility through blood donation drives,
+                  tree plantation, digital literacy camps, and rural outreach
+                  programs.
+                </p>
+                <div class="achievement-title">🏅 Achievements</div>
+                <div class="achievement-item">
+                   Planted 1000+ trees across Pune district in 2023
+                </div>
+                <div class="achievement-item">
+                   Digital literacy programs for 500 rural women
+                </div>
+                <div class="achievement-item">
+                   Best NSS Unit Award by SPPU for 2022-23
+                </div>
+                <span class="members-badge">👥 150+ Active Members</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-role="footer" class="clubs-footer" data-position="fixed">
+        <h4> PICT Pune — Student Life & Activities</h4>
+      </div>
+    </div>
+  </body>
+</html>

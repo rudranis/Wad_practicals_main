@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Delights</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #fff8f0;
+        }
+
+        header {
+            background: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 250px;
+            height: 200px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Dark overlay */
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .card span {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            z-index: 1;
+        }
+
+        /* Images */
+        .paneer {
+            background: url('https://source.unsplash.com/400x300/?paneer') center/cover;
+        }
+
+        .biryani {
+            background: url('https://source.unsplash.com/400x300/?biryani') center/cover;
+        }
+
+        .noodles {
+            background: url('https://source.unsplash.com/400x300/?noodles') center/cover;
+        }
+
+        .indian {
+            background: url('https://source.unsplash.com/400x300/?indian-food') center/cover;
+        }
+
+        .italian {
+            background: url('https://source.unsplash.com/400x300/?pizza') center/cover;
+        }
+
+        .chinese {
+            background: url('https://source.unsplash.com/400x300/?chinese-food') center/cover;
+        }
+
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px;
+            background: #ff6600;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ABC Delights</h1>
+        <p>Welcome to our Restaurant</p>
+    </header>
+
+    <div class="section">
+        <h2>Top Dishes</h2>
+        <div class="row">
+            <div class="card paneer"><span>Paneer Tikka</span></div>
+            <div class="card biryani"><span>Biryani</span></div>
+            <div class="card noodles"><span>Hakka Noodles</span></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Cuisines</h2>
+        <div class="row">
+            <div class="card indian"><span>Indian</span></div>
+            <div class="card italian"><span>Italian</span></div>
+            <div class="card chinese"><span>Chinese</span></div>
+        </div>
+    </div>
+
+    <a href="menu.html" class="btn">View Full Menu</a>
+
+</body>
+
+</html>

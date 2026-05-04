@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Employee Records</h1>
+
+    <a href="/add" class="btn">Add Employee</a>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Joining Date</th>
+            <th>Actions</th>
+        </tr>
+
+        <% employees.forEach(emp=> { %>
+            <tr>
+                <td>
+                    <%= emp.name %>
+                </td>
+                <td>
+                    <%= emp.department %>
+                </td>
+                <td>
+                    <%= emp.designation %>
+                </td>
+                <td>₹<%= emp.salary %>
+                </td>
+                <td>
+                    <%= emp.joiningDate.toDateString() %>
+                </td>
+                <td>
+                    <a href="/edit/<%= emp._id %>">Edit</a>
+                    <a href="/delete/<%= emp._id %>" onclick="return confirm('Delete?')">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+
+    </table>
+
+</body>
+
+</html>

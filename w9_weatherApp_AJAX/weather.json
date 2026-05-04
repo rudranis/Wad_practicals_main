@@ -1,0 +1,22 @@
+{
+    "pune": {
+        "temp": "28°C",
+        "humidity": "60%",
+        "condition": "Sunny"
+    },
+    "mumbai": {
+        "temp": "30°C",
+        "humidity": "70%",
+        "condition": "Humid"
+    },
+    "delhi": {
+        "temp": "35°C",
+        "humidity": "40%",
+        "condition": "Hot"
+    },
+    "bangalore": {
+        "temp": "25°C",
+        "humidity": "65%",
+        "condition": "Cloudy"
+    }
+}

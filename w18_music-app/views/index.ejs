@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Music DB</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Music Database</h1>
+
+    <h3>Total Songs: <%= count %>
+    </h3>
+
+    <div class="controls">
+
+        <a href="/insert">Insert Default Songs</a>
+        <a href="/add">Add Song</a>
+
+        <form action="/director">
+            <input name="name" placeholder="Music Director">
+            <button>Search</button>
+        </form>
+
+        <form action="/director-singer">
+            <input name="director" placeholder="Director">
+            <input name="singer" placeholder="Singer">
+            <button>Filter</button>
+        </form>
+
+        <form action="/singer-film">
+            <input name="singer" placeholder="Singer">
+            <input name="film" placeholder="Film">
+            <button>Search</button>
+        </form>
+
+    </div>
+
+    <table>
+        <tr>
+            <th>Song</th>
+            <th>Film</th>
+            <th>Director</th>
+            <th>Singer</th>
+            <th>Actor</th>
+            <th>Actress</th>
+            <th>Actions</th>
+        </tr>
+
+        <% songs.forEach(s=> { %>
+            <tr>
+                <td>
+                    <%= s.songname %>
+                </td>
+                <td>
+                    <%= s.film %>
+                </td>
+                <td>
+                    <%= s.music_director %>
+                </td>
+                <td>
+                    <%= s.singer %>
+                </td>
+                <td>
+                    <%= s.actor || '-' %>
+                </td>
+                <td>
+                    <%= s.actress || '-' %>
+                </td>
+                <td>
+                    <a href="/update/<%= s._id %>">Add Actor</a>
+                    <a href="/delete/<%= s._id %>">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+
+    </table>
+
+</body>
+
+</html>

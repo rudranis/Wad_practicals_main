@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie Reviews</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+  <style>
+    body { background: #0d0d0d; }
+    .movie-header { background: #8b0000 !important; }
+    .movie-header h1 { color: #ffd700 !important; font-size: 18px; }
+    .movie-footer { background: #8b0000 !important; }
+    .movie-footer h4 { color: #ffd700 !important; }
+    .movie-card {
+      background: #1a1a1a; border-radius: 10px; margin-bottom: 18px;
+      overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.6); border: 1px solid #333;
+    }
+    .poster-placeholder {
+      width: 100%; height: 180px; display: flex;
+      align-items: center; justify-content: center; font-size: 70px;
+    }
+    .movie-body { padding: 14px; }
+    .movie-title { color: #ffd700; font-size: 18px; margin: 0 0 6px 0; font-weight: bold; }
+    .movie-meta { display: flex; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+    .genre-badge {
+      background: #8b0000; color: #ffd700; font-size: 11px;
+      padding: 3px 10px; border-radius: 12px; font-weight: bold;
+    }
+    .year-badge { background: #333; color: #aaa; font-size: 11px; padding: 3px 10px; border-radius: 12px; }
+    .movie-summary { color: #ccc; font-size: 13px; line-height: 1.6; margin-bottom: 10px; }
+    .stars { color: #ffd700; font-size: 20px; margin-bottom: 6px; }
+    .review-label { color: #ffd700; font-size: 12px; font-weight: bold; margin-bottom: 4px; }
+    .review-text {
+      color: #bbb; font-size: 13px; font-style: italic; line-height: 1.6;
+      background: #111; border-left: 3px solid #8b0000;
+      padding: 8px 10px; border-radius: 0 6px 6px 0;
+    }
+    .director-row { color: #888; font-size: 12px; margin-top: 8px; }
+    [data-role="content"] { background: #0d0d0d !important; padding: 12px; }
+  </style>
+</head>
+<body>
+
+<div data-role="page" id="movies">
+  <div data-role="header" class="movie-header" data-position="fixed">
+    <h1>🎬 CineReview</h1>
+  </div>
+  <div data-role="content">
+    <h2 style="color:#ffd700;border-bottom:1px solid #333;padding-bottom:6px;">🍿 Top Movie Reviews</h2>
+
+    <!-- MOVIE 1 -->
+    <div class="movie-card">
+      <div class="poster-placeholder" style="background:linear-gradient(135deg,#1a0000,#8b0000);">🕷️</div>
+      <div class="movie-body">
+        <div class="movie-title">Spider-Man: No Way Home</div>
+        <div class="movie-meta">
+          <span class="genre-badge">Action / Sci-Fi</span>
+          <span class="year-badge">2021</span>
+        </div>
+        <p class="movie-summary">When Peter Parker asks Doctor Strange to make the world forget he is Spider-Man, the spell goes wrong, pulling in villains and heroes from alternate universes.</p>
+        <div class="stars">★★★★★</div>
+        <div class="review-label">📝 Our Review</div>
+        <div class="review-text">"A love letter to Spider-Man fans. No Way Home blends nostalgia with emotional depth, delivering one of the most satisfying superhero films in decades."</div>
+        <div class="director-row">🎬 Jon Watts &nbsp;|&nbsp; ⭐ 8.2/10 IMDb</div>
+      </div>
+    </div>
+
+    <!-- MOVIE 2 -->
+    <div class="movie-card">
+      <div class="poster-placeholder" style="background:linear-gradient(135deg,#001a00,#006600);">☢️</div>
+      <div class="movie-body">
+        <div class="movie-title">Oppenheimer</div>
+        <div class="movie-meta">
+          <span class="genre-badge">Historical Drama</span>
+          <span class="year-badge">2023</span>
+        </div>
+        <p class="movie-summary">The story of J. Robert Oppenheimer and the Manhattan Project — the race to develop the world's first atomic bomb during World War II.</p>
+        <div class="stars">★★★★★</div>
+        <div class="review-label">📝 Our Review</div>
+        <div class="review-text">"A cinematic masterpiece. Cillian Murphy's portrayal is haunting and unforgettable. The film forces you to grapple with the ethics of science and the weight of history."</div>
+        <div class="director-row">🎬 Christopher Nolan &nbsp;|&nbsp; ⭐ 8.9/10 IMDb</div>
+      </div>
+    </div>
+
+    <!-- MOVIE 3 -->
+    <div class="movie-card">
+      <div class="poster-placeholder" style="background:linear-gradient(135deg,#00001a,#000066);">🌊</div>
+      <div class="movie-body">
+        <div class="movie-title">Interstellar</div>
+        <div class="movie-meta">
+          <span class="genre-badge">Sci-Fi / Adventure</span>
+          <span class="year-badge">2014</span>
+        </div>
+        <p class="movie-summary">A former NASA pilot travels through a wormhole near Saturn to find a new habitable planet for humanity in a dying future Earth.</p>
+        <div class="stars">★★★★★</div>
+        <div class="review-label">📝 Our Review</div>
+        <div class="review-text">"A breathtaking achievement. Nolan's vision of space travel is both scientifically grounded and deeply human. Hans Zimmer's score elevates every scene."</div>
+        <div class="director-row">🎬 Christopher Nolan &nbsp;|&nbsp; ⭐ 8.7/10 IMDb</div>
+      </div>
+    </div>
+
+    <!-- MOVIE 4 -->
+    <div class="movie-card">
+      <div class="poster-placeholder" style="background:linear-gradient(135deg,#1a0800,#804000);">🦁</div>
+      <div class="movie-body">
+        <div class="movie-title">Animal</div>
+        <div class="movie-meta">
+          <span class="genre-badge">Action / Drama</span>
+          <span class="year-badge">2023</span>
+        </div>
+        <p class="movie-summary">Ranvijay, a fiercely devoted son of a powerful business magnate, goes to extreme lengths to protect his father from rivals in a tale of obsession and vengeance.</p>
+        <div class="stars">★★★★☆</div>
+        <div class="review-label">📝 Our Review</div>
+        <div class="review-text">"Ranbir Kapoor delivers the performance of his career. Animal is unapologetically intense with electrifying action and an emotionally charged father-son dynamic."</div>
+        <div class="director-row">🎬 Sandeep Reddy Vanga &nbsp;|&nbsp; ⭐ 7.1/10 IMDb</div>
+      </div>
+    </div>
+
+    <!-- MOVIE 5 -->
+    <div class="movie-card">
+      <div class="poster-placeholder" style="background:linear-gradient(135deg,#100020,#4b0082);">🦇</div>
+      <div class="movie-body">
+        <div class="movie-title">The Dark Knight</div>
+        <div class="movie-meta">
+          <span class="genre-badge">Action / Thriller</span>
+          <span class="year-badge">2008</span>
+        </div>
+        <p class="movie-summary">Batman faces the Joker, a criminal mastermind who wants nothing but chaos. A psychological battle between order and anarchy unfolds across Gotham City.</p>
+        <div class="stars">★★★★★</div>
+        <div class="review-label">📝 Our Review</div>
+        <div class="review-text">"Heath Ledger's Joker remains one of the greatest villain performances in cinema history. More than a superhero film — a philosophical exploration of morality and chaos."</div>
+        <div class="director-row">🎬 Christopher Nolan &nbsp;|&nbsp; ⭐ 9.0/10 IMDb</div>
+      </div>
+    </div>
+
+  </div>
+  <div data-role="footer" class="movie-footer" data-position="fixed">
+    <h4>🎬 CineReview — Honest Movie Reviews</h4>
+  </div>
+</div>
+</body>
+</html>

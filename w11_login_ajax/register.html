@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 400px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background: teal;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+
+        <form id="form">
+
+            <input type="text" id="name" placeholder="Name">
+            <div class="error" id="e1"></div>
+
+            <input type="email" id="email" placeholder="Email">
+            <div class="error" id="e2"></div>
+
+            <input type="text" id="mobile" placeholder="Mobile">
+            <div class="error" id="e3"></div>
+
+            <input type="date" id="dob">
+            <div class="error" id="e4"></div>
+
+            <input type="text" id="city" placeholder="City">
+            <div class="error" id="e5"></div>
+
+            <textarea id="address" placeholder="Address"></textarea>
+            <div class="error" id="e6"></div>
+
+            <input type="text" id="username" placeholder="Username">
+            <div class="error" id="e7"></div>
+
+            <input type="password" id="password" placeholder="Password">
+            <div class="error" id="e8"></div>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+    <script>
+
+        // VALIDATION FUNCTION
+        function validate(data) {
+            let valid = true;
+
+            // Name
+            if (!data.name || data.name.length < 3) {
+                e1.innerText = "Minimum 3 characters required";
+                valid = false;
+            } else e1.innerText = "";
+
+            // Email
+            if (!data.email || !/^\S+@\S+\.\S+$/.test(data.email)) {
+                e2.innerText = "Invalid email format";
+                valid = false;
+            } else e2.innerText = "";
+
+            // Mobile
+            if (!data.mobile || !/^[0-9]{10}$/.test(data.mobile)) {
+                e3.innerText = "Enter valid 10-digit number";
+                valid = false;
+            } else e3.innerText = "";
+
+            // DOB
+            if (!data.dob) {
+                e4.innerText = "Select date of birth";
+                valid = false;
+            } else e4.innerText = "";
+
+            // City
+            if (!data.city) {
+                e5.innerText = "Enter city";
+                valid = false;
+            } else e5.innerText = "";
+
+            // Address
+            if (!data.address || data.address.length < 5) {
+                e6.innerText = "Address too short";
+                valid = false;
+            } else e6.innerText = "";
+
+            // Username
+            if (!data.username || data.username.length < 4) {
+                e7.innerText = "Minimum 4 characters required";
+                valid = false;
+            } else e7.innerText = "";
+
+            // Password
+            if (!data.password || data.password.length < 6) {
+                e8.innerText = "Minimum 6 characters required";
+                valid = false;
+            } else e8.innerText = "";
+
+            return valid;
+        }
+
+        // FORM SUBMIT
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // GET VALUES CORRECTLY
+            const data = {
+                name: document.getElementById("name").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                mobile: document.getElementById("mobile").value.trim(),
+                dob: document.getElementById("dob").value,
+                city: document.getElementById("city").value.trim(),
+                address: document.getElementById("address").value.trim(),
+                username: document.getElementById("username").value.trim(),
+                password: document.getElementById("password").value.trim()
+            };
+
+            // VALIDATE
+            if (!validate(data)) return;
+
+            // AJAX POST (simulation)
+            fetch("https://jsonplaceholder.typicode.com/posts", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: { "Content-type": "application/json" }
+            })
+                .then(() => {
+
+                    // STORE IN LOCAL STORAGE
+                    let users = JSON.parse(localStorage.getItem("users")) || [];
+                    users.push(data);
+                    localStorage.setItem("users", JSON.stringify(users));
+
+                    alert("Registered Successfully!");
+
+                    // REDIRECT
+                    window.location.href = "login.html";
+
+                })
+                .catch(() => {
+                    alert("Error occurred while registering");
+                });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #6366f1, #06b6d4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        nav {
+            background: #020617;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #cbd5f5;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 1000px;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #6366f1;
+            color: white;
+            padding: 8px 14px;
+            margin: 6px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        h2 {
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        .projects-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            background: #333;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Web Developer | Student | Tech Enthusiast</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- About -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate developer with interest in web development, data analytics, and problem-solving.
+                I enjoy building projects and learning new technologies.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <h3>Languages</h3>
+            <div class="skills">
+                <span>C++</span>
+                <span>Java</span>
+                <span>Python</span>
+            </div>
+
+            <h3>Web Technologies</h3>
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+            </div>
+
+            <h3>Tools & Technologies</h3>
+            <div class="skills">
+                <span>Git</span>
+                <span>MongoDB</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="projects-container">
+
+                <div class="project-card" onclick="openModal('nebula')">
+                    <h3>Nebula Flow</h3>
+                    <p>Click to view details</p>
+                </div>
+
+                <div class="project-card" onclick="openModal('collabrix')">
+                    <h3>Collabrix</h3>
+                    <p>Click to view details</p>
+                </div>
+
+                <div class="project-card" onclick="openModal('skillforge')">
+                    <h3>SkillForge</h3>
+                    <p>Click to view details</p>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+
+                <h2 id="modalTitle"></h2>
+                <p id="modalDesc"></p>
+
+                <a id="githubLink" target="_blank">GitHub</a> |
+                <a id="liveLink" target="_blank">Live Demo</a>
+            </div>
+        </div>
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="experience-card">
+                <h3>SDE Intern — LSOYS Apps and Games</h3>
+                <p><strong>Duration:</strong> Feb 2026 - Present</p>
+                <ul>
+                    <li>Worked on full-stack web development.</li>
+                    <li>Implemented Generative AI & Machine Learning features.</li>
+                    <li>Built scalable applications with focus on APIs and performance.</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <p><strong>Bachelor's Degree in Computer Engineering</strong></p>
+            <p>Pune Institute of Computer Technology</p>
+
+            <p><strong>Higher Secondary</strong></p>
+            <p>Rashtriya Junior College</p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: your.email@example.com</p>
+            <p>Phone: +91 XXXXXXXXXX</p>
+            <p>LinkedIn: linkedin.com/in/yourprofile</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Your Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const projectData = {
+            nebula: {
+                title: "Nebula Flow",
+                desc: "Add your project description here.",
+                github: "https://github.com/yourlink",
+                live: "https://yourdeployment.com"
+            },
+            collabrix: {
+                title: "Collabrix",
+                desc: "Add your project description here.",
+                github: "https://github.com/yourlink",
+                live: "https://yourdeployment.com"
+            },
+            skillforge: {
+                title: "SkillForge",
+                desc: "A MERN platform for creating and reviewing micro-courses.",
+                github: "https://github.com/yourlink",
+                live: "https://yourdeployment.com"
+            }
+        };
+
+        function openModal(project) {
+            document.getElementById("modalTitle").innerText = projectData[project].title;
+            document.getElementById("modalDesc").innerText = projectData[project].desc;
+
+            document.getElementById("githubLink").href = projectData[project].github;
+            document.getElementById("liveLink").href = projectData[project].live;
+
+            document.getElementById("projectModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("projectModal").style.display = "none";
+        }
+
+        // Close on outside click
+        window.onclick = function (event) {
+            const modal = document.getElementById("projectModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

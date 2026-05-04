@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: teal;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Login</h2>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+
+        function login() {
+            const u = username.value;
+            const p = password.value;
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            let found = users.find(x => x.username === u && x.password === p);
+
+            if (found) {
+                alert("Login Successful");
+                window.location.href = "data.html";
+            } else {
+                alert("Invalid Credentials");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-Do App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        .container {
+            width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 8px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            background: #38bdf8;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+        }
+
+        .task {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+
+        .high {
+            border-left: 5px solid red;
+        }
+
+        .medium {
+            border-left: 5px solid orange;
+        }
+
+        .low {
+            border-left: 5px solid green;
+        }
+
+        .actions button {
+            width: auto;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .delete {
+            background: #ef4444;
+            color: white;
+        }
+
+        .edit {
+            background: #facc15;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>To-Do List</h2>
+
+        <input type="text" id="task" placeholder="Enter task">
+        <select id="priority">
+            <option value="low">Low Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="high">High Priority</option>
+        </select>
+        <input type="date" id="dueDate">
+
+        <button onclick="addTask()">Add Task</button>
+
+        <div id="list"></div>
+    </div>
+
+    <script>
+
+        // LOAD TASKS (AJAX GET)
+        function loadTasks() {
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "/todos", true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+                    const data = JSON.parse(xhr.responseText);
+                    const list = document.getElementById('list');
+                    list.innerHTML = '';
+
+                    data.forEach(t => {
+                        list.innerHTML += `
+                    <div class="task ${t.priority}">
+                        <strong>${t.text}</strong><br>
+                        Priority: ${t.priority}<br>
+                        Due: ${t.dueDate || 'N/A'}
+
+                        <div class="actions">
+                            <button class="edit" onclick="editTask(${t.id}, '${t.text}', '${t.priority}', '${t.dueDate}')">Edit</button>
+                            <button class="delete" onclick="deleteTask(${t.id})">Delete</button>
+                        </div>
+                    </div>`;
+                    });
+                }
+            };
+
+            xhr.send();
+        }
+
+        // ADD TASK (AJAX POST)
+        function addTask() {
+            const text = document.getElementById('task').value;
+            const priority = document.getElementById('priority').value;
+            const dueDate = document.getElementById('dueDate').value;
+
+            if (!text) return alert("Enter task");
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "/todos", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById('task').value = '';
+                    loadTasks();
+                }
+            };
+
+            xhr.send(JSON.stringify({ text, priority, dueDate }));
+        }
+
+        // DELETE TASK (AJAX DELETE)
+        function deleteTask(id) {
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("DELETE", `/todos/${id}`, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    loadTasks();
+                }
+            };
+
+            xhr.send();
+        }
+
+        // EDIT TASK (AJAX PUT)
+        function editTask(id, text, priority, dueDate) {
+            const newText = prompt("Edit task:", text);
+            const newPriority = prompt("Priority (low/medium/high):", priority);
+            const newDate = prompt("Due date:", dueDate);
+
+            if (!newText) return;
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open("PUT", `/todos/${id}`, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    loadTasks();
+                }
+            };
+
+            xhr.send(JSON.stringify({
+                text: newText,
+                priority: newPriority,
+                dueDate: newDate
+            }));
+        }
+
+        // INITIAL LOAD
+        loadTasks();
+
+    </script>
+
+</body>
+
+</html>

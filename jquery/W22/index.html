@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PICT Pune</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    <style>
+      .pict-header {
+        background: #003366 !important;
+      }
+      .pict-header h1 {
+        color: #ffffff !important;
+        font-size: 17px;
+      }
+      .pict-footer {
+        background: #003366 !important;
+      }
+      .pict-footer h4 {
+        color: #aac4e8 !important;
+        font-size: 12px;
+      }
+      .hero-banner {
+        background: linear-gradient(135deg, #003366, #00509e);
+        border-radius: 10px;
+        padding: 20px 16px;
+        color: white;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+      .hero-banner h2 {
+        margin: 0 0 6px 0;
+        font-size: 19px;
+        color: #ffd700;
+      }
+      .hero-banner p {
+        margin: 0;
+        font-size: 13px;
+        opacity: 0.9;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: #ffd700;
+        color: #003366;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+      .stat-row {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        flex: 1;
+        background: #f0f4ff;
+        border-radius: 8px;
+        padding: 12px 5px;
+        text-align: center;
+        border-top: 3px solid #003366;
+      }
+      .stat-box .num {
+        font-size: 20px;
+        font-weight: bold;
+        color: #003366;
+      }
+      .stat-box .lbl {
+        font-size: 11px;
+        color: #777;
+        margin-top: 2px;
+      }
+      .info-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 14px;
+        margin-bottom: 12px;
+        border-left: 5px solid #003366;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      .info-card h3 {
+        color: #003366;
+        margin: 0 0 6px 0;
+        font-size: 15px;
+      }
+      .info-card p {
+        color: #555;
+        font-size: 13px;
+        margin: 0;
+        line-height: 1.6;
+      }
+      [data-role="collapsible"] .ui-collapsible-heading a {
+        background: #003366 !important;
+        color: white !important;
+      }
+      .course-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 5px;
+        border-bottom: 1px solid #eee;
+      }
+      .course-row h4 {
+        margin: 0 0 2px 0;
+        font-size: 14px;
+        color: #003366;
+      }
+      .course-row p {
+        margin: 0;
+        font-size: 12px;
+        color: #777;
+      }
+      .intake-badge {
+        margin-left: auto;
+        background: #003366;
+        color: white;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+      .dept-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #f8faff;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #d0daf0;
+      }
+      .dept-icon {
+        font-size: 28px;
+      }
+      .dept-card h4 {
+        margin: 0 0 3px 0;
+        color: #003366;
+        font-size: 14px;
+      }
+      .dept-card p {
+        margin: 0;
+        font-size: 12px;
+        color: #777;
+      }
+      .contact-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 5px;
+        border-bottom: 1px solid #eee;
+      }
+      .contact-row h4 {
+        margin: 0 0 2px 0;
+        font-size: 14px;
+        color: #003366;
+      }
+      .contact-row p {
+        margin: 0;
+        font-size: 13px;
+        color: #555;
+      }
+      .map-placeholder {
+        background: linear-gradient(135deg, #e8f0fe, #c5d8f6);
+        border-radius: 8px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+        font-size: 14px;
+        color: #003366;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PAGE 1: ABOUT US -->
+    <div data-role="page" id="about">
+      <div data-role="header" class="pict-header" data-position="fixed">
+        <h1>🎓 PICT Pune</h1>
+      </div>
+      <div data-role="content" style="padding-top: 10px">
+        <div class="hero-banner">
+          <h2>Pune Institute of Computer Technology</h2>
+          <p>Autonomous Institute affiliated to SPPU, established in 1983.</p>
+          <span class="hero-badge">🏆 NAAC Grade A+</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="num">40+</div>
+            <div class="lbl">Years</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">3000+</div>
+            <div class="lbl">Students</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">200+</div>
+            <div class="lbl">Faculty</div>
+          </div>
+        </div>
+        <div data-role="collapsible-set">
+          <div data-role="collapsible" data-collapsed="false">
+            <h3>🏛️ About the Institute</h3>
+            <div class="info-card">
+              <h3>History & Vision</h3>
+              <p>
+                PICT was founded in 1983 by Pune Vidyarthi Griha. It is one of
+                Pune's most prestigious engineering institutes, known for
+                producing industry-ready engineers. Approved by AICTE and
+                accredited by NBA.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Mission</h3>
+              <p>
+                To impart quality technical education, develop innovative
+                thinking, and foster professional integrity so graduates
+                contribute meaningfully to society and the nation.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Accreditation</h3>
+              <p>
+                ✅ NAAC — A+ Grade &nbsp;|&nbsp; ✅ NBA Accredited<br />✅ AICTE
+                Approved &nbsp;|&nbsp; ✅ SPPU Autonomous
+              </p>
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>🏆 Rankings & Achievements</h3>
+            <div class="info-card">
+              <p>
+                🥇 Ranked among Top 50 Engineering Colleges in India (NIRF 2024)
+              </p>
+            </div>
+            <div class="info-card">
+              <p>
+                🏆 Best Engineering College in Pune — Times of India Survey 2023
+              </p>
+            </div>
+            <div class="info-card">
+              <p>
+                💼 95%+ placement with Microsoft, Google, Infosys, TCS, Wipro
+              </p>
+            </div>
+            <div class="info-card">
+              <p>📚 25+ IEEE research papers published in 2023-24</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-role="navbar" class="pict-header">
+        <ul>
+          <li>
+            <a href="#about" data-transition="none" class="ui-btn-active"
+              >🏛️ About</a
+            >
+          </li>
+          <li><a href="#courses" data-transition="slide">📚 Courses</a></li>
+          <li><a href="#departments" data-transition="slide">🔬 Dept.</a></li>
+          <li><a href="#contact" data-transition="slide">📞 Contact</a></li>
+        </ul>
+      </div>
+      <div data-role="footer" class="pict-footer" data-position="fixed">
+        <h4>© 2025 PICT Pune — All Rights Reserved</h4>
+      </div>
+    </div>
+
+    <!-- PAGE 2: COURSES -->
+    <div data-role="page" id="courses">
+      <div data-role="header" class="pict-header" data-position="fixed">
+        <h1>📚 Courses Offered</h1>
+      </div>
+      <div data-role="content" style="padding-top: 10px">
+        <p style="color: #555; font-size: 13px; margin-bottom: 14px">
+          Undergraduate, Postgraduate, and PhD programs approved by AICTE and
+          affiliated to SPPU.
+        </p>
+        <div data-role="collapsible-set">
+          <div data-role="collapsible" data-collapsed="false">
+            <h3>🎓 Undergraduate B.E. — 4 Years</h3>
+            <div class="course-row">
+              <span style="font-size: 22px">💻</span>
+              <div>
+                <h4>Computer Engineering</h4>
+                <p>AI, ML, Web, Cloud, Systems</p>
+              </div>
+              <span class="intake-badge">240 seats</span>
+            </div>
+            <div class="course-row">
+              <span style="font-size: 22px">📡</span>
+              <div>
+                <h4>Electronics & Telecomm.</h4>
+                <p>VLSI, IoT, Signal Processing</p>
+              </div>
+              <span class="intake-badge">60 seats</span>
+            </div>
+            <div class="course-row">
+              <span style="font-size: 22px">⚡</span>
+              <div>
+                <h4>Electrical Engineering</h4>
+                <p>Power Systems, Control Systems</p>
+              </div>
+              <span class="intake-badge">60 seats</span>
+            </div>
+            <div class="course-row">
+              <span style="font-size: 22px">🔧</span>
+              <div>
+                <h4>Mechanical Engineering</h4>
+                <p>Design, Manufacturing, Robotics</p>
+              </div>
+              <span class="intake-badge">60 seats</span>
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>🎓 Postgraduate M.E. — 2 Years</h3>
+            <div class="course-row">
+              <span style="font-size: 22px">🤖</span>
+              <div>
+                <h4>M.E. Computer Engineering</h4>
+                <p>AI & Data Science specialization</p>
+              </div>
+              <span class="intake-badge">18 seats</span>
+            </div>
+            <div class="course-row">
+              <span style="font-size: 22px">📡</span>
+              <div>
+                <h4>M.E. Electronics</h4>
+                <p>VLSI Design & Embedded Systems</p>
+              </div>
+              <span class="intake-badge">18 seats</span>
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>📋 Admission Criteria</h3>
+            <div class="info-card">
+              <h3>B.E. Admission</h3>
+              <p>
+                Through MHT-CET / JEE Main via CAP rounds conducted by State CET
+                Cell, Maharashtra.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>M.E. Admission</h3>
+              <p>
+                Through GATE score. Direct admission available for
+                GATE-qualified candidates.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Lateral Entry</h3>
+              <p>
+                Available for Diploma holders. 10% seats reserved through
+                separate CAP rounds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-role="navbar" class="pict-header">
+        <ul>
+          <li>
+            <a href="#about" data-transition="slide" data-direction="reverse"
+              >🏛️ About</a
+            >
+          </li>
+          <li>
+            <a href="#courses" data-transition="none" class="ui-btn-active"
+              >📚 Courses</a
+            >
+          </li>
+          <li><a href="#departments" data-transition="slide">🔬 Dept.</a></li>
+          <li><a href="#contact" data-transition="slide">📞 Contact</a></li>
+        </ul>
+      </div>
+      <div data-role="footer" class="pict-footer" data-position="fixed">
+        <h4>© 2025 PICT Pune — All Rights Reserved</h4>
+      </div>
+    </div>
+
+    <!-- PAGE 3: DEPARTMENTS -->
+    <div data-role="page" id="departments">
+      <div data-role="header" class="pict-header" data-position="fixed">
+        <h1>🔬 Departments</h1>
+      </div>
+      <div data-role="content" style="padding-top: 10px">
+        <p style="color: #555; font-size: 13px; margin-bottom: 14px">
+          Well-equipped departments with state-of-the-art labs and experienced
+          faculty.
+        </p>
+        <div class="dept-card">
+          <span class="dept-icon">💻</span>
+          <div>
+            <h4>Computer Engineering</h4>
+            <p>Largest dept. • 150+ faculty • 10 labs • NBA Accredited</p>
+          </div>
+        </div>
+        <div class="dept-card">
+          <span class="dept-icon">📡</span>
+          <div>
+            <h4>Electronics & Telecommunication</h4>
+            <p>VLSI, Embedded, IoT Labs • 40+ faculty</p>
+          </div>
+        </div>
+        <div class="dept-card">
+          <span class="dept-icon">⚡</span>
+          <div>
+            <h4>Electrical Engineering</h4>
+            <p>Power systems, Drives, PLC labs • 30+ faculty</p>
+          </div>
+        </div>
+        <div class="dept-card">
+          <span class="dept-icon">🔧</span>
+          <div>
+            <h4>Mechanical Engineering</h4>
+            <p>CAD/CAM, Fluid Mechanics, CNC labs</p>
+          </div>
+        </div>
+        <div class="dept-card">
+          <span class="dept-icon">🔢</span>
+          <div>
+            <h4>Applied Sciences & Humanities</h4>
+            <p>Mathematics, Physics, Chemistry, English</p>
+          </div>
+        </div>
+        <div class="dept-card">
+          <span class="dept-icon">📊</span>
+          <div>
+            <h4>Management Studies (MBA)</h4>
+            <p>Business Analytics, HR, Finance streams</p>
+          </div>
+        </div>
+        <div data-role="collapsible" style="margin-top: 10px">
+          <h3>🏗️ Infrastructure & Facilities</h3>
+          <div class="info-card">
+            <p>📚 Central Library with 50,000+ books and e-journals</p>
+          </div>
+          <div class="info-card">
+            <p>🖥️ 1000+ computers across 15 computer labs with 24x7 internet</p>
+          </div>
+          <div class="info-card">
+            <p>🏋️ Sports complex, gymnasium, basketball & volleyball courts</p>
+          </div>
+          <div class="info-card">
+            <p>🍽️ Spacious canteen seating 500+ students</p>
+          </div>
+          <div class="info-card">
+            <p>🚌 College bus facility covering major Pune routes</p>
+          </div>
+        </div>
+      </div>
+      <div data-role="navbar" class="pict-header">
+        <ul>
+          <li>
+            <a href="#about" data-transition="slide" data-direction="reverse"
+              >🏛️ About</a
+            >
+          </li>
+          <li>
+            <a href="#courses" data-transition="slide" data-direction="reverse"
+              >📚 Courses</a
+            >
+          </li>
+          <li>
+            <a href="#departments" data-transition="none" class="ui-btn-active"
+              >🔬 Dept.</a
+            >
+          </li>
+          <li><a href="#contact" data-transition="slide">📞 Contact</a></li>
+        </ul>
+      </div>
+      <div data-role="footer" class="pict-footer" data-position="fixed">
+        <h4>© 2025 PICT Pune — All Rights Reserved</h4>
+      </div>
+    </div>
+
+    <!-- PAGE 4: CONTACT -->
+    <div data-role="page" id="contact">
+      <div data-role="header" class="pict-header" data-position="fixed">
+        <h1>📞 Contact Us</h1>
+      </div>
+      <div data-role="content" style="padding-top: 10px">
+        <div class="contact-row">
+          <span style="font-size: 20px">📍</span>
+          <div>
+            <h4>Address</h4>
+            <p>
+              Survey No. 27, Near Trimurti Chowk,<br />Dhankawadi, Pune – 411
+              043, Maharashtra.
+            </p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span style="font-size: 20px">📞</span>
+          <div>
+            <h4>Phone</h4>
+            <p>+91-20-24371101 / 24372236</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span style="font-size: 20px">📧</span>
+          <div>
+            <h4>Email</h4>
+            <p>principal@pict.edu<br />admissions@pict.edu</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span style="font-size: 20px">🌐</span>
+          <div>
+            <h4>Website</h4>
+            <p>www.pict.edu</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span style="font-size: 20px">⏰</span>
+          <div>
+            <h4>Office Hours</h4>
+            <p>Mon–Sat: 9:00 AM – 5:00 PM | Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          📍 PICT Pune — Dhankawadi, Pune 411043
+        </div>
+        <div data-role="collapsible" style="margin-top: 14px">
+          <h3>📋 Quick Links</h3>
+          <ul data-role="listview" data-inset="true">
+            <li><a href="#">🎓 Admission Portal</a></li>
+            <li><a href="#">📋 Exam Results</a></li>
+            <li><a href="#">📅 Academic Calendar</a></li>
+            <li><a href="#">🏢 Placement Cell</a></li>
+            <li><a href="#">📰 PICT Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div data-role="navbar" class="pict-header">
+        <ul>
+          <li>
+            <a href="#about" data-transition="slide" data-direction="reverse"
+              >🏛️ About</a
+            >
+          </li>
+          <li>
+            <a href="#courses" data-transition="slide" data-direction="reverse"
+              >📚 Courses</a
+            >
+          </li>
+          <li>
+            <a
+              href="#departments"
+              data-transition="slide"
+              data-direction="reverse"
+              >🔬 Dept.</a
+            >
+          </li>
+          <li>
+            <a href="#contact" data-transition="none" class="ui-btn-active"
+              >📞 Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div data-role="footer" class="pict-footer" data-position="fixed">
+        <h4>© 2025 PICT Pune — All Rights Reserved</h4>
+      </div>
+    </div>
+  </body>
+</html>

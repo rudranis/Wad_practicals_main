@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictoreal Club</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI';
+        }
+
+        /* THEME */
+        :root {
+            --primary: #6c63ff;
+            --dark: #1e1e2f;
+        }
+
+        /* NAV */
+        .navbar {
+            background: var(--dark);
+        }
+
+        /* HERO */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://source.unsplash.com/1600x800/?creative,art');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* CARD */
+        .card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold">Pictoreal</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">☰</button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link">Login</a></li>
+                    <li class="nav-item"><a class="nav-link">Signup</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <h1 class="display-4 fw-bold">Unleash Your Creativity</h1>
+            <p class="lead">Design • Photography • Writing • Editing</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container py-5 text-center">
+        <h2>Who Are We?</h2>
+        <p class="mt-3">
+            We are a society where you can live your hobbies again — whether it's design,
+            photography, writing, editing. Showcase your skills and express creativity.
+        </p>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="container py-5">
+        <h2 class="text-center mb-4">Our Events</h2>
+
+        <div class="row">
+
+            <!-- Hackathon -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <h5>Hackathon</h5>
+                    <p>Collaborate, create and solve real-world problems with creativity.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hack">See Details</button>
+                </div>
+            </div>
+
+            <!-- Workshop -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <h5>Workshop</h5>
+                    <p>Hands-on sessions to learn photography, design & editing.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#work">See Details</button>
+                </div>
+            </div>
+
+            <!-- Seminar -->
+            <div class="col-md-4 mb-4">
+                <div class="card p-3">
+                    <h5>Seminar</h5>
+                    <p>Gain insights from experts on creativity & career growth.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sem">See Details</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODALS -->
+
+    <!-- Hackathon -->
+    <div class="modal fade" id="hack">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h5>Hackathon Details</h5>
+                <ul>
+                    <li>Team Size: 2–4</li>
+                    <li>Date: 20 Oct 2026</li>
+                    <li>Duration: 24 Hours</li>
+                    <li>Theme: Innovation & Creativity</li>
+                    <li>Prizes worth ₹50,000</li>
+                </ul>
+                <a href="register.html?event=hackathon" class="btn btn-success">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workshop -->
+    <div class="modal fade" id="work">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h5>Workshop Details</h5>
+                <ul>
+                    <li>Topics: Photography, Editing, Design</li>
+                    <li>Date: 25 Oct 2026</li>
+                    <li>Duration: 6 Hours</li>
+                    <li>Hands-on training</li>
+                </ul>
+                <a href="register.html?event=workshop" class="btn btn-success">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seminar -->
+    <div class="modal fade" id="sem">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+                <h5>Seminar Details</h5>
+                <ul>
+                    <li>Topic: Career Growth</li>
+                    <li>Date: 30 Oct 2026</li>
+                    <li>Guest Speakers</li>
+                    <li>Networking Opportunity</li>
+                </ul>
+                <a href="register.html?event=seminar" class="btn btn-success">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container py-5 text-center">
+        <h2>Contact Us</h2>
+        <p>Email: pictoreal@club.com</p>
+        <p>Phone: +91 9876543210</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-white p-3" style="background:#1e1e2f;">
+        <p>© 2026 Pictoreal Club</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

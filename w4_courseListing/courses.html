@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f4f7fb;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4f46e5, #06b6d4);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #4f46e5;
+        }
+
+        /* Category Cards */
+        .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 250px;
+            height: 180px;
+            border-radius: 10px;
+            position: relative;
+            color: white;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .card span {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            z-index: 1;
+        }
+
+        /* Images */
+        .ai {
+            background: url('https://source.unsplash.com/400x300/?ai') center/cover;
+        }
+
+        .ds {
+            background: url('https://source.unsplash.com/400x300/?data-science') center/cover;
+        }
+
+        .web {
+            background: url('https://source.unsplash.com/400x300/?web-development') center/cover;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #4f46e5;
+            color: white;
+        }
+
+        a.btn {
+            padding: 6px 10px;
+            background: #06b6d4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #111827;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Online Learning Hub - Courses</h1>
+    </header>
+
+    <section>
+        <h2>Course Categories</h2>
+        <div class="row">
+            <div class="card ai"><span>AI & ML</span></div>
+            <div class="card ds"><span>Data Science</span></div>
+            <div class="card web"><span>Web Development</span></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Available Courses</h2>
+
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Instructor</th>
+                <th>Duration</th>
+                <th>Fee (₹)</th>
+                <th>Details</th>
+            </tr>
+
+            <tr>
+                <td>Machine Learning Basics</td>
+                <td>Dr. Sharma</td>
+                <td>8 Weeks</td>
+                <td>₹8999</td>
+                <td><a class="btn" href="course-detail.html?course=ml">See Details</a></td>
+            </tr>
+
+            <tr>
+                <td>Data Science with Python</td>
+                <td>Ms. Gupta</td>
+                <td>10 Weeks</td>
+                <td>₹10999</td>
+                <td><a class="btn" href="course-detail.html?course=ds">See Details</a></td>
+            </tr>
+
+            <tr>
+                <td>Full Stack Web Dev</td>
+                <td>Mr. Verma</td>
+                <td>12 Weeks</td>
+                <td>₹12999</td>
+                <td><a class="btn" href="course-detail.html?course=web">See Details</a></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>© 2026 Online Learning Hub | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>

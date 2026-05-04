@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Payal Talreja",
+        "designation": "SDE Intern",
+        "department": "Engineering",
+        "salary": 30000,
+        "image": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Rahul Sharma",
+        "designation": "Data Analyst",
+        "department": "Analytics",
+        "salary": 45000,
+        "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Neha Verma",
+        "designation": "UI/UX Designer",
+        "department": "Design",
+        "salary": 40000,
+        "image": "https://randomuser.me/api/portraits/women/68.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Amit Singh",
+        "designation": "Backend Developer",
+        "department": "Engineering",
+        "salary": 50000,
+        "image": "https://randomuser.me/api/portraits/men/75.jpg"
+    }
+]
