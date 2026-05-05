@@ -1,0 +1,14 @@
+.container {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  margin: 5px;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+}
